@@ -33,7 +33,7 @@ DEFAULT_CONFIG = {
 }
 if not os.path.exists(CONFIG_PATH):
     with open(CONFIG_PATH, "w") as f:
-        yaml.dump(DEFAULT_CONFIG, f)
+        yaml.dump(DEFAULT_CONFIG, f, sort_keys=False)
     print("Default config file created.")
 
 with open(CONFIG_PATH, "r") as f:
