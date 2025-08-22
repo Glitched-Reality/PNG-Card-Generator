@@ -2,7 +2,7 @@
 Simple Python project for makeing basic png trading cards.
 
 ## How to use
-[Download the lastest relase](https://github.com/Glitched-Reality/PNG-Card-Generator/releases/latest) and place it into its own folder. The file is unsigned so windows may give smart screen error when running for the first time.
+[Download the lastest release](https://github.com/Glitched-Reality/PNG-Card-Generator/releases/latest) and place it into its own folder. The file is unsigned so windows may give smart screen error when running for the first time.
 
 ### Default Config:
 ```
