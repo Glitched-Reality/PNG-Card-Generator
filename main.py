@@ -9,17 +9,17 @@ CONFIG_PATH = "card_config.yaml"
 
 DEFAULT_CONFIG = {
     "border_styles": {
-        "Basic": [200, 200, 200, 80, 80, 80],
+        "Basic": [150, 150, 150, 100, 100, 100],
         "Uncommon": [180, 255, 180, 0, 150, 0],
         "Rare": [180, 200, 255, 0, 80, 200],
         "Epic": [230, 200, 255, 100, 0, 100],
         "Legendary": [255, 230, 180, 180, 100, 0]
     },
     "gradient_types": {
-        "Attack": [150, 0, 0, 255, 150, 150],
-        "Defense": [0, 0, 150, 150, 150, 255],
-        "Neutral": [80, 80, 80, 220, 220, 220],
-        "Bounty": [150, 120, 0, 255, 230, 150]
+        "Attack": [180, 60, 60, 220, 100, 100],
+        "Defense": [60, 60, 180, 120, 120, 220],
+        "Neutral": [120, 120, 120, 180, 180, 180],
+        "Bounty": [180, 150, 80, 220, 190, 120]
     },
     "card_size": {
         "height": 900,
@@ -161,9 +161,16 @@ def generate_card_image(border_style, gradient_type, command_text, desc_text):
         desc_start_y = line_y + 15
 
     # Draw description text
-    if desc_text.strip():
-        wrapped = textwrap.fill(desc_text, width=28)
-        draw.multiline_text((BORDER_WIDTH + 5, desc_start_y), wrapped, font=FONT_DESC, fill=text_color, spacing=4)
+    desc_text = desc_entry.get("1.0", "end").strip()
+
+    if desc_text:
+        draw.multiline_text(
+            (BORDER_WIDTH + 5, desc_start_y),
+            desc_text,
+            font=FONT_DESC,
+            fill=text_color,
+            spacing=4
+        )
 
     # Apply outer rounded mask
     border_gradient.putalpha(outer_mask)
